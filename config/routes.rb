@@ -7,10 +7,8 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations'
              }
 
-  resources :users do 
-    # resources :user_reservations
-    resources :reservations
-  end
+  resources :users 
+  resources :reservations
   resources :trips
   get '/member-data', to: 'members#show'
 end

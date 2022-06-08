@@ -1,22 +1,21 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[ show update destroy ]
+  before_action :set_reservation, only: %i[show update destroy]
 
   # GET /reservations
   def index
     # @reservations = Reservation.all
-    @user = User.find(params[:user_id])
-    @reservations = @user.reservations
+    # @user = User.find(params[:user_id])
+    # @reservations = @user.reservations
+    @reservations = current_user.reservations
 
     render json: @reservations
   end
 
   # GET /reservations/1
   def show
-
-    # @reservation = current_user.reservations.where(user_id: current_user)
-    @reservation = current_user.reservations.find(params[:id])
     # @user = User.find(params[:user_id])
     # @reservation = @user.reservations.find(params[:id])
+    @reservation = current_user.reservations.find(params[:id])
 
     render json: @reservation
   end
@@ -24,7 +23,7 @@ class ReservationsController < ApplicationController
   # POST /reservations
   def create
     # @reservation = Reservation.new(reservation_params)
-      @reservation = current_user.reservations.new(reservation_params)
+    @reservation = current_user.reservations.new(reservation_params)
 
     if @reservation.save
       render json: @reservation, status: :created
@@ -48,13 +47,14 @@ class ReservationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reservation
-      @reservation = Reservation.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reservation_params
-      params.require(:reservation).permit(:date, :user_id, :trip_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def reservation_params
+    params.require(:reservation).permit(:date, :user_id, :trip_id)
+  end
 end
