@@ -3,7 +3,8 @@ class Trip < ApplicationRecord
 
   validates :name, presence: true
   validates :destination, presence: true
-  validates :vip, presence: true
+  # validates :vip, presence: true
+  validates_inclusion_of :vip, in: [true, false]
   validates :price, presence: true
   validates :image, presence: true
   validates :description, presence: true
