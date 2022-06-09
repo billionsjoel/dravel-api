@@ -13,7 +13,7 @@ Trip.create(name: "Business", destination: "Los Angeles", vip: true, price: 50.7
 
 Trip.create(name: "Pilgrimage", destination: "Vatican", vip: true, price: 100.7, image: "https://images.unsplash.com/photo-1616369415526-ce055dfa3a87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw0Njk2OTYxfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60", start_date: "2019-02-01", end_date: "2019-09-02", description: "This is a trip to Vatican")
 
-Trip.create(name: "Vacation", destination: "Abuja", vip: true, price: 4.7, image: "https://images.unsplash.com/photo-1520046045453-547e1175391e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", start_date: "2017-01-01", end_date: "2017-01-02", description: "This is a trip to Abuja")
+Trip.create(name: "Tourism", destination: "Dubai", vip: true, price: 150.7, image: "https://th.bing.com/th/id/R.5e3f89f420b3496558830db9ae0eda35?rik=8s88iYXVoH%2fuBg&riu=http%3a%2f%2fwww.hdwallpaper.nu%2fwp-content%2fuploads%2f2015%2f04%2fwallpaper-2812735.jpg&ehk=S5Fo4FkVkNOpYrXo3PWj2tiLuDrbOLXbSrF0LUyzHms%3d&risl=&pid=ImgRaw&r=0", start_date: "2020-01-01", end_date: "2020-04-02", description: "This is a tourism trip to Dubai")
 
 Trip.create(name: "Vacation", destination: "Abuja", vip: true, price: 4.7, image: "https://images.unsplash.com/photo-1520046045453-547e1175391e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", start_date: "2017-01-01", end_date: "2017-01-02", description: "This is a trip to Abuja")
 
