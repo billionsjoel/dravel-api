@@ -17,8 +17,8 @@ Trip.create(name: "Tourism", destination: "Dubai", vip: true, price: 150.7, imag
 
 Trip.create(name: "Medical", destination: "India", vip: true, price: 500.7, image: "https://th.bing.com/th/id/R.e7ed5ca46490b8be9652cdcf04b1c580?rik=hs8hm5aqbPH7mA&pid=ImgRaw&r=0", start_date: "2020-10-01", end_date: "2020-11-02", description: "This is a medical trip to India")
 
-Trip.create(name: "Vacation", destination: "Abuja", vip: true, price: 4.7, image: "https://images.unsplash.com/photo-1520046045453-547e1175391e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", start_date: "2017-01-01", end_date: "2017-01-02", description: "This is a trip to Abuja")
+Trip.create(name: "Scholarship", destination: "Ukraine", vip: true, price: 600.7, image: "https://th.bing.com/th/id/OIP.UPT4nIUidoheYf30NjUJ5AHaE5?w=256&h=180&c=7&r=0&o=5&pid=1.7", start_date: "2021-01-01", end_date: "2021-11-02", description: "This is an educational(scholarship) trip to Ukraine")
 
-Trip.create(name: "Vacation", destination: "Abuja", vip: true, price: 4.7, image: "https://images.unsplash.com/photo-1520046045453-547e1175391e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", start_date: "2017-01-01", end_date: "2017-01-02", description: "This is a trip to Abuja")
+Trip.create(name: "Sport", destination: "England", vip: true, price: 800.7, image: "https://www.moosetravel.ca/resources/image/Item-36/Sport1.jpg", start_date: "2022-01-01", end_date: "2022-12-02", description: "This is a sport trip to England")
 
 Trip.create(name: "Vacation", destination: "Abuja", vip: true, price: 4.7, image: "https://images.unsplash.com/photo-1520046045453-547e1175391e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", start_date: "2017-01-01", end_date: "2017-01-02", description: "This is a trip to Abuja")
