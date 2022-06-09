@@ -13,7 +13,14 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
   test 'should create trip' do
     assert_difference('Trip.count') do
       post trips_url,
-           params: { trip: { description: @trip.description, destination: @trip.destination, image: @trip.image, name: @trip.name, price: @trip.price, vip: @trip.vip } }, as: :json
+           params: { trip: {
+             description: @trip.description,
+             destination: @trip.destination,
+             image: @trip.image,
+             name: @trip.name,
+             price: @trip.price,
+             vip: @trip.vip
+           } }, as: :json
     end
 
     assert_response :created
@@ -26,7 +33,14 @@ class TripsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update trip' do
     patch trip_url(@trip),
-          params: { trip: { description: @trip.description, destination: @trip.destination, image: @trip.image, name: @trip.name, price: @trip.price, vip: @trip.vip } }, as: :json
+          params: { trip: {
+            description: @trip.description,
+            destination: @trip.destination,
+            image: @trip.image,
+            name: @trip.name,
+            price: @trip.price,
+            vip: @trip.vip
+          } }, as: :json
     assert_response :success
   end
 
