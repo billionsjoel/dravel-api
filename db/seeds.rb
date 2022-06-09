@@ -21,4 +21,4 @@ Trip.create(name: "Scholarship", destination: "Ukraine", vip: true, price: 600.7
 
 Trip.create(name: "Sport", destination: "England", vip: true, price: 800.7, image: "https://www.moosetravel.ca/resources/image/Item-36/Sport1.jpg", start_date: "2022-01-01", end_date: "2022-12-02", description: "This is a sport trip to England")
 
-Trip.create(name: "Vacation", destination: "Abuja", vip: true, price: 4.7, image: "https://images.unsplash.com/photo-1520046045453-547e1175391e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", start_date: "2017-01-01", end_date: "2017-01-02", description: "This is a trip to Abuja")
+Trip.create(name: "Movie", destination: "USA", vip: true, price: 1200.7, image: "https://media.istockphoto.com/photos/young-woman-travelling-with-kayak-in-nature-and-vlogging-picture-id1295131729?k=20&m=1295131729&s=612x612&w=0&h=fRMDSjie9xHobhg-VPZ6XagJ-wItT6Lqfukrk0xSyyk=", start_date: "2022-03-01", end_date: "2022-11-02", description: "This is a movie trip to USA")
