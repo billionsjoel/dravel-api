@@ -3,7 +3,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def destroy
     sign_out current_user
-    render json: { message: 'logged out......'}, status: :ok
+    render json: { message: "#{current_user.user_name} logged out......"}, status: :ok
   end
 
   private
