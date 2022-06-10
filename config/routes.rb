@@ -8,7 +8,8 @@ Rails.application.routes.draw do
              }
 
   resources :users 
-  resources :reservations
-  resources :trips
+  resources :trips do 
+    resources :reservations
+  end
   get '/member-data', to: 'members#show'
 end
