@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'Test for the User Validation' do
-    subject { User.new(email: 'john@mail.com', user_name: 'John',  password: 'john') }
+    subject { User.new(email: 'john@mail.com', user_name: 'John', password: 'john') }
     before { subject.save }
 
     it 'if there is name' do
