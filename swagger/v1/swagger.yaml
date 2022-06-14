@@ -1,8 +1,9 @@
 ---
 openapi: 3.0.1
 info:
-  title: API V1
+  title: DRAVEL API 
   version: v1
+  description: This is DRAVEL API for the DRAVEL project. The DRAVEL project is a project that is used to create a new type of travel website.
 paths:
   "/users":
     post:
@@ -189,6 +190,69 @@ paths:
                 - price
                 - image
                 - description
+        '404':
+          description: blog not found
+        '406':
+          description: unsupported accept header
+  "/users/{user_id}/reservations":
+    post:
+      summary: Creates a reservation
+      tags:
+      - reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: datetime
+              required:
+              - date
+  "/users/{user_id}/reservations/{id}":
+    get:
+      summary: Retrieves a reservation
+      tags:
+      - Trips
+      - Another Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: trip found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  date:
+                    type: datetime
+                required:
+                - id
+                - date
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  date:
+                    type: datetime
+                required:
+                - id
+                - date
         '404':
           description: blog not found
         '406':
