@@ -1,0 +1,119 @@
+---
+openapi: 3.0.1
+info:
+  title: DRAVEL API
+  version: v1
+paths:
+  "/trips":
+    post:
+      summary: Creates a trip
+      tags:
+      - Trips
+      parameters: []
+      responses:
+        '201':
+          description: trip created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                destination:
+                  type: string
+                vip:
+                  type: number
+                price:
+                  type: number
+                image:
+                  type: string
+                description:
+                  type: string
+              required:
+              - name
+              - destination
+              - vip
+              - price
+              - image
+              - description
+  "/trips/{id}":
+    get:
+      summary: Retrieves a trip
+      tags:
+      - Trips
+      - Another Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: trip found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  destination:
+                    type: string
+                  vip:
+                    type: boolean
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  description:
+                    type: string
+                required:
+                - id
+                - name
+                - destination
+                - vip
+                - price
+                - image
+                - description
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  destination:
+                    type: string
+                  vip:
+                    type: boolean
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  description:
+                    type: string
+                required:
+                - id
+                - name
+                - destination
+                - vip
+                - price
+                - image
+                - description
+        '404':
+          description: blog not found
+        '406':
+          description: unsupported accept header
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
