@@ -1,9 +1,90 @@
 ---
 openapi: 3.0.1
 info:
-  title: DRAVEL API
+  title: API V1
   version: v1
 paths:
+  "/users":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                user_name:
+                  type: string
+                password:
+                  type: number
+              required:
+              - email
+              - user_name
+              - password
+  "/users/{id}":
+    get:
+      summary: Retrieves a user
+      tags:
+      - Users
+      - Another Tag
+      parameters:
+      - user_name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: integer
+                required:
+                - id
+                - email
+                - user_name
+                - password
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: integer
+                required:
+                - id
+                - email
+                - user_name
+                - password
+        '404':
+          description: user not found
+        '406':
+          description: unsupported accept header
   "/trips":
     post:
       summary: Creates a trip
@@ -51,7 +132,7 @@ paths:
         in: path
         required: true
         schema:
-          type: string
+          type: integer
       responses:
         '200':
           description: trip found
