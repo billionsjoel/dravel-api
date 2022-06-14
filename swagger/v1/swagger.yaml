@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: DRAVEL API 
   version: v1
-  description: This is DRAVEL API for the DRAVEL project. The DRAVEL project is a project that is used to create a new type of travel website.
+  description: This is DRAVEL API for the DRAVEL project. The DRAVEL project is a travel website that allows users to create a trip and also create reservations.
 paths:
   "/users":
     post:
