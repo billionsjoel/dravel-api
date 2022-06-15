@@ -24,10 +24,12 @@ RSpec.configure do |config|
       paths: {},
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: 'https://dravel-api.herokuapp.com/trips
+',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'https://dravel-api.herokuapp.com/trips
+'
             }
           }
         }
