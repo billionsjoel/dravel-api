@@ -11,10 +11,12 @@ RSpec.describe 'Dravel API' do
       parameter name: :user, in: :body, schema: {
         type: :object,
         properties: {
+          user: {
           email: { type: :string },
           user_name: { type: :string },
           password: { type: :number }
-        },
+          }
+      },
         required: [ 'email', 'user_name', 'password' ]
       }
 

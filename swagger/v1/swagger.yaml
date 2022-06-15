@@ -22,12 +22,13 @@ paths:
             schema:
               type: object
               properties:
-                email:
-                  type: string
-                user_name:
-                  type: string
-                password:
-                  type: number
+                user:
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: number
               required:
               - email
               - user_name
@@ -258,11 +259,7 @@ paths:
         '406':
           description: unsupported accept header
 servers:
-- url: 'https://dravel-api.herokuapp.com/trips
-
-    '
+- url: https://dravel-api.herokuapp.com
   variables:
     defaultHost:
-      default: 'https://dravel-api.herokuapp.com/trips
-
-        '
+      default: https://dravel-api.herokuapp.com
