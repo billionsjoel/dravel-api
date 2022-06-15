@@ -34,6 +34,7 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       render json: @reservation, status: :created
+
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
@@ -51,6 +52,7 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1
   def destroy
     @reservation.destroy
+    render json: { message: "Reservation has been deleted Successfully." }, status: :ok
   end
 
   private

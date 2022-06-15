@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resources :reservations
   end
   get '/member-data', to: 'members#show'
+  get '/', to: 'trips#index' 
 end
