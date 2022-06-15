@@ -4,9 +4,6 @@ class ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    # @reservations = Reservation.all
-    # @user = User.find(params[:user_id])
-    # @reservations = @user.reservations
     @reservations = current_user.reservations
 
     render json: @reservations
@@ -14,8 +11,6 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1
   def show
-    # @user = User.find(params[:user_id])
-    # @reservation = @user.reservations.find(params[:id])
     @reservation = current_user.reservations.find(params[:id])
 
     render json: @reservation
@@ -52,7 +47,7 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1
   def destroy
     @reservation.destroy
-    render json: { message: "Reservation has been deleted Successfully." }, status: :ok
+    render json: { message: 'Reservation has been deleted Successfully.' }, status: :ok
   end
 
   private

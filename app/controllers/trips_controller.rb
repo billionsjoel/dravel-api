@@ -36,7 +36,7 @@ class TripsController < ApplicationController
   # DELETE /trips/1
   def destroy
     @trip.destroy
-    render json: { message: "Trip has been deleted Successfully." }, status: :ok
+    render json: { message: 'Trip has been deleted Successfully.' }, status: :ok
   end
 
   private
