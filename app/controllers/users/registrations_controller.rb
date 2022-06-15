@@ -13,7 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # message = 'Signed in successfully ${@user.user_name}'
     # render json: { message => :message }
     # render json: { message: 'Signed up sucessfully.' }
-    render json: { message: current_user.user_name }
+    @token = SecureRandom.hex
+    # @token = @user.auth_token
+    render json: { message: current_user.user_name, auth_token: @token }
   end
 
   def register_failed
