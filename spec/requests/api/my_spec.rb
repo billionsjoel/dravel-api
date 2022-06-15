@@ -186,6 +186,4 @@ RSpec.describe 'Dravel API' do
       end
     end
   end
-
-
 end
