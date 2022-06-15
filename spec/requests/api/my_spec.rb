@@ -30,7 +30,7 @@ RSpec.describe 'Dravel API' do
     end
   end
 
-  path '/users/{id}' do
+  path '/users' do
 
     get 'Retrieves a user' do
       tags 'Users', 'Another Tag'
@@ -94,7 +94,7 @@ RSpec.describe 'Dravel API' do
     end
   end
 
-  path '/trips/{id}' do
+  path '/trips' do
 
     get 'Retrieves a trip' do
       tags 'Trips', 'Another Tag'
@@ -134,7 +134,7 @@ RSpec.describe 'Dravel API' do
   path '/users/{user_id}/reservations' do
 
     post 'Creates a reservation' do
-      tags 'reservations'
+      tags 'Reservations'
       consumes 'application/json'
       parameter name: :reservation, in: :body, schema: {
         type: :object,
@@ -159,7 +159,7 @@ RSpec.describe 'Dravel API' do
   path '/users/{user_id}/reservations/{id}' do
 
     get 'Retrieves a reservation' do
-      tags 'Trips', 'Another Tag'
+      tags 'Reservations', 'Another Tag'
       produces 'application/json', 'application/xml'
       parameter name: :id, in: :path, type: :integer
 
