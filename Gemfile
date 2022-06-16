@@ -22,6 +22,11 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
 
+gem 'rswag'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -46,6 +51,8 @@ gem 'bootsnap', require: false
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+
+  gem 'rswag-specs'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end

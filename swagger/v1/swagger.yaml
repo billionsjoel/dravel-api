@@ -1,0 +1,262 @@
+---
+openapi: 3.0.1
+info:
+  title: DRAVEL API 
+  version: v1
+  description: This is the API for DRAVEL application. DRAVEL is a web application for managing and sharing travel plans. It allows users to create travel plans, share them with other users, and view other users' travel plans.
+paths:
+  "/users":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                user_name:
+                  type: string
+                password:
+                  type: number
+              required:
+              - email
+              - user_name
+              - password
+    get:
+      summary: Retrieves a user
+      tags:
+      - Users
+      - Another Tag
+      parameters:
+      - user_name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: integer
+                required:
+                - id
+                - email
+                - user_name
+                - password
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: integer
+                required:
+                - id
+                - email
+                - user_name
+                - password
+        '404':
+          description: user not found
+        '406':
+          description: unsupported accept header
+  "/trips":
+    post:
+      summary: Creates a trip
+      tags:
+      - Trips
+      parameters: []
+      responses:
+        '201':
+          description: trip created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                destination:
+                  type: string
+                vip:
+                  type: number
+                price:
+                  type: number
+                image:
+                  type: string
+                description:
+                  type: string
+              required:
+              - name
+              - destination
+              - vip
+              - price
+              - image
+              - description
+    get:
+      summary: Retrieves a trip
+      tags:
+      - Trips
+      - Another Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: trip found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  destination:
+                    type: string
+                  vip:
+                    type: boolean
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  description:
+                    type: string
+                required:
+                - id
+                - name
+                - destination
+                - vip
+                - price
+                - image
+                - description
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  destination:
+                    type: string
+                  vip:
+                    type: boolean
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  description:
+                    type: string
+                required:
+                - id
+                - name
+                - destination
+                - vip
+                - price
+                - image
+                - description
+        '404':
+          description: blog not found
+        '406':
+          description: unsupported accept header
+  "/users/{user_id}/reservations":
+    post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: datetime
+              required:
+              - date
+  "/users/{user_id}/reservations/{id}":
+    get:
+      summary: Retrieves a reservation
+      tags:
+      - Reservations
+      - Another Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: trip found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  date:
+                    type: datetime
+                required:
+                - id
+                - date
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  date:
+                    type: datetime
+                required:
+                - id
+                - date
+        '404':
+          description: blog not found
+        '406':
+          description: unsupported accept header
+servers:
+- url: https://dravel-api.herokuapp.com
+  variables:
+    defaultHost:
+      default: https://dravel-api.herokuapp.com
