@@ -5,16 +5,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def respond_with(resource, _opts = {})
     register_success && return if resource.persisted?
-
     register_failed
   end
 
   def register_success
-
-    @token = SecureRandom.hex
-    
-    render json: { message: "#{current_user.user_name} has signed up sucessfully.", auth_token: @token }, status: :ok
-
+     @token = SecureRandom.hex
+     render json: { message: "#{current_user.user_name} has signed up sucessfully.", auth_token: @token }, status: :ok
   end
 
   def register_failed
