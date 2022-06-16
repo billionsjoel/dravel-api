@@ -76,10 +76,10 @@ Navigate to the repository by running `cd dravel`.
 - GitHub: [@josKalenda](https://github.com/josKalenda)
 - LinkedIn: [josKalenda](https://www.linkedin.com/in/josKalenda/)
 
-👤 **Aneikan Udo**
+👤 **Aniekan Udo**
 
-- GitHub: [@Aneikan](https://github.com/Aneikan)
-- LinkedIn: [Aneikan](https://www.linkedin.com/in/Aneikan/)
+- GitHub: [@Aniekan](https://github.com/Anny85-code)
+- LinkedIn: [Aniekan](https://www.linkedin.com/in/aniekan-udo/)
 
 ## 🤝 Contributing
 
