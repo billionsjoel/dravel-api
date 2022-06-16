@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     render json: @users, status: :ok
   end
 
-
   # DELETE /users/1
   def destroy
     @user.destroy

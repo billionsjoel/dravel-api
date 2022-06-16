@@ -5,15 +5,15 @@ info:
   version: v1
   description: This is the API for DRAVEL application. DRAVEL is a web application for managing and sharing travel plans. It allows users to create travel plans, share them with other users, and view other users' travel plans.
 paths:
-  "/users/{user_id}/reservations":
+  "/users":
     post:
-      summary: Creates a reservation
+      summary: Creates a user
       tags:
-      - Reservations
+      - Users
       parameters: []
       responses:
         '201':
-          description: reservation created
+          description: user created
         '422':
           description: invalid request
       requestBody:
@@ -22,25 +22,30 @@ paths:
             schema:
               type: object
               properties:
-                date:
-                  type: datetime
+                email:
+                  type: string
+                user_name:
+                  type: string
+                password:
+                  type: number
               required:
-              - date
-  "/users/{user_id}/reservations/{id}":
+              - email
+              - user_name
+              - password
     get:
-      summary: Retrieves a reservation
+      summary: Retrieves a user
       tags:
-      - Reservations
+      - Users
       - Another Tag
       parameters:
-      - name: id
+      - user_name: id
         in: path
         required: true
         schema:
-          type: integer
+          type: string
       responses:
         '200':
-          description: trip found
+          description: user found
           content:
             application/json:
               schema:
@@ -48,24 +53,36 @@ paths:
                 properties:
                   id:
                     type: integer
-                  date:
-                    type: datetime
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: integer
                 required:
                 - id
-                - date
+                - email
+                - user_name
+                - password
             application/xml:
               schema:
                 type: object
                 properties:
                   id:
                     type: integer
-                  date:
-                    type: datetime
+                  email:
+                    type: string
+                  user_name:
+                    type: string
+                  password:
+                    type: integer
                 required:
                 - id
-                - date
+                - email
+                - user_name
+                - password
         '404':
-          description: blog not found
+          description: user not found
         '406':
           description: unsupported accept header
   "/trips":
@@ -175,15 +192,15 @@ paths:
           description: blog not found
         '406':
           description: unsupported accept header
-  "/users":
+  "/users/{user_id}/reservations":
     post:
-      summary: Creates a user
+      summary: Creates a reservation
       tags:
-      - Users
+      - Reservations
       parameters: []
       responses:
         '201':
-          description: user created
+          description: reservation created
         '422':
           description: invalid request
       requestBody:
@@ -192,30 +209,25 @@ paths:
             schema:
               type: object
               properties:
-                email:
-                  type: string
-                user_name:
-                  type: string
-                password:
-                  type: number
+                date:
+                  type: datetime
               required:
-              - email
-              - user_name
-              - password
+              - date
+  "/users/{user_id}/reservations/{id}":
     get:
-      summary: Retrieves a user
+      summary: Retrieves a reservation
       tags:
-      - Users
+      - Reservations
       - Another Tag
       parameters:
-      - user_name: id
+      - name: id
         in: path
         required: true
         schema:
-          type: string
+          type: integer
       responses:
         '200':
-          description: user found
+          description: trip found
           content:
             application/json:
               schema:
@@ -223,36 +235,24 @@ paths:
                 properties:
                   id:
                     type: integer
-                  email:
-                    type: string
-                  user_name:
-                    type: string
-                  password:
-                    type: integer
+                  date:
+                    type: datetime
                 required:
                 - id
-                - email
-                - user_name
-                - password
+                - date
             application/xml:
               schema:
                 type: object
                 properties:
                   id:
                     type: integer
-                  email:
-                    type: string
-                  user_name:
-                    type: string
-                  password:
-                    type: integer
+                  date:
+                    type: datetime
                 required:
                 - id
-                - email
-                - user_name
-                - password
+                - date
         '404':
-          description: user not found
+          description: blog not found
         '406':
           description: unsupported accept header
 servers:
