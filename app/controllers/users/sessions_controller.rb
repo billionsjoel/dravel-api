@@ -9,7 +9,8 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def respond_with(_resource, _opts = {})
-    render json: { message: "#{current_user.user_name} has logged in." }, status: :ok
+    @token = SecureRandom.hex
+    render json: { message: "#{current_user.user_name} has logged in.", auth_token: @token }, status: :ok
   end
 
   def respond_to_on_destroy
@@ -19,8 +20,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def log_out_success
-    # render json: { message: current_user.user_name }, status: :ok
-    # render json: { message: 'You are logged out.' }, status: :ok
     render json: { message: "#{current_user.user_name} logged out..." }, status: :ok
   end
 
