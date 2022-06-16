@@ -9,9 +9,10 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations'
              }
 
-  resources :users do
-  resources :reservations
+  resources :users 
+  resources :trips do 
+    resources :reservations
   end
-  resources :trips
   get '/member-data', to: 'members#show'
+  get '/', to: 'trips#index' 
 end
