@@ -1,8 +1,9 @@
 ---
 openapi: 3.0.1
 info:
-  title: DRAVEL API
+  title: DRAVEL API 
   version: v1
+  description: This is the API for DRAVEL application. DRAVEL is a web application for managing and sharing travel plans. It allows users to create travel plans, share them with other users, and view other users' travel plans.
 paths:
   "/users":
     post:
