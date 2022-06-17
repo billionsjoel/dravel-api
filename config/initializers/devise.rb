@@ -313,5 +313,6 @@ Devise.setup do |config|
 
   config.jwt do |jwt|
     jwt.secret = 'jwt_secret_key'
+    # jwt.dispatch_requests = [['POST', %r{^/sign_in$}]]
   end
 end
