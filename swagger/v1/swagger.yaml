@@ -192,7 +192,43 @@ paths:
           description: blog not found
         '406':
           description: unsupported accept header
-  "/users/{user_id}/reservations":
+  "/trips/{trip_id}":
+    delete:
+      summary: Delete a trip
+      tags:
+      - Trips
+      parameters: []
+      responses:
+        '201':
+          description: trip deleted
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                destination:
+                  type: string
+                vip:
+                  type: number
+                price:
+                  type: number
+                image:
+                  type: string
+                description:
+                  type: string
+              required:
+              - name
+              - destination
+              - vip
+              - price
+              - image
+              - description
+  "/trips/{trip_id}/reservations":
     post:
       summary: Creates a reservation
       tags:
@@ -213,7 +249,7 @@ paths:
                   type: datetime
               required:
               - date
-  "/users/{user_id}/reservations/{id}":
+  "/trips/{trip_id}/reservations/{id}":
     get:
       summary: Retrieves a reservation
       tags:
@@ -255,6 +291,27 @@ paths:
           description: blog not found
         '406':
           description: unsupported accept header
+  "/trips/{trip_id}/reservations/{reservation_id}":
+    delete:
+      summary: Delete a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation deleted
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: datetime
+              required:
+              - date
 servers:
 - url: https://dravel-api.herokuapp.com
   variables:

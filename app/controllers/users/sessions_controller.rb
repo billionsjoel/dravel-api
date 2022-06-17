@@ -9,8 +9,10 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def respond_with(_resource, _opts = {})
-    @token = SecureRandom.hex
-    render json: { message: "#{current_user.user_name} has logged in.", auth_token: @token }, status: :ok
+    # @token = SecureRandom.hex
+    # render json: { message: "#{current_user.user_name} has logged in.", auth_token: @token }, status: :ok
+
+    render json: { message: "#{current_user.user_name} has logged in." }, status: :ok
   end
 
   def respond_to_on_destroy

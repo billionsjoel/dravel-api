@@ -15,8 +15,9 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   # end
 
   allow do
-    origins 'http://your.frontend.domain.com'
-    resource '/api/*',
+    origins '*'
+    # resource '/api/*',
+    resource '*',
       headers: %w(Authorization),
       methods: :any,
       expose: %w(Authorization),
