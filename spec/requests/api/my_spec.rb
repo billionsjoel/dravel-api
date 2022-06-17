@@ -126,7 +126,7 @@ RSpec.describe 'Dravel API' do
     end
   end
 
-  path '/users/{user_id}/reservations' do
+  path '/trips/{trip_id}/reservations' do
     post 'Creates a reservation' do
       tags 'Reservations'
       consumes 'application/json'
@@ -150,7 +150,7 @@ RSpec.describe 'Dravel API' do
     end
   end
 
-  path '/users/{user_id}/reservations/{id}' do
+  path '/trips/{trip_id}/reservations/{id}' do
     get 'Retrieves a reservation' do
       tags 'Reservations', 'Another Tag'
       produces 'application/json', 'application/xml'
@@ -164,7 +164,7 @@ RSpec.describe 'Dravel API' do
                },
                required: %w[id date]
 
-        let(:id) { Reservation.create(date: '2022-06-19').id }
+        let(:id) { Reservation.create(date: '2022-06-19 11:00:05 -0700 ').id }
         run_test!
       end
 
