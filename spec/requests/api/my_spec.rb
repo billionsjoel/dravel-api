@@ -126,6 +126,35 @@ RSpec.describe 'Dravel API' do
     end
   end
 
+  path '/trips/{trip_id}' do
+    delete 'Delete a trip' do
+      tags 'Trips'
+      consumes 'application/json'
+      parameter name: :trip, in: :body, schema: {
+        type: :object,
+        properties: {
+          name: { type: :string },
+          destination: { type: :string },
+          vip: { type: :number },
+          price: { type: :number },
+          image: { type: :string },
+          description: { type: :string }
+        },
+        required: %w[name destination vip price image description]
+      }
+
+      response '201', 'trip deleted' do
+        let(:trip) { { name: 'medical', destination: 'Abuja', vip: 'true', price: '45', image: 'https://imagurl', description: 'A nice medical tourism' } }
+        run_test!
+      end
+
+      response '422', 'invalid request' do
+        let(:trip) { { name: 'medical' } }
+        run_test!
+      end
+    end
+  end
+
   path '/trips/{trip_id}/reservations' do
     post 'Creates a reservation' do
       tags 'Reservations'
