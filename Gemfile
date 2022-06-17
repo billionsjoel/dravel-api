@@ -22,7 +22,7 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
 
-gem 'rswag'
+# gem 'rswag'
 
 gem 'rswag-api'
 gem 'rswag-ui'
