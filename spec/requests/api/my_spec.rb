@@ -168,12 +168,12 @@ RSpec.describe 'Dravel API' do
       }
 
       response '201', 'reservation created' do
-        let(:reservation) { { date: '2022-06-19' } }
+        let(:reservation) { { date: '2022-06-19 11:00:05 -0700' } }
         run_test!
       end
 
       response '422', 'invalid request' do
-        let(:reseravtion) { { date: '2022-06-19' } }
+        let(:reseravtion) { { date: '2022-06-19 11:00:05 -0700' } }
         run_test!
       end
     end
@@ -204,6 +204,30 @@ RSpec.describe 'Dravel API' do
 
       response '406', 'unsupported accept header' do
         let(:Accept) { 'application/trip' }
+        run_test!
+      end
+    end
+  end
+
+  path '/trips/{trip_id}/reservations/{reservation_id}' do
+    delete 'Delete a reservation' do
+      tags 'Reservations'
+      consumes 'application/json'
+      parameter name: :reservation, in: :body, schema: {
+        type: :object,
+        properties: {
+          date: { type: :datetime }
+        },
+        required: ['date']
+      }
+
+      response '201', 'reservation deleted' do
+        let(:reservation) { { date: '2022-06-19 11:00:05 -0700' } }
+        run_test!
+      end
+
+      response '422', 'invalid request' do
+        let(:reseravtion) { { date: '2022-06-19 11:00:05 -0700' } }
         run_test!
       end
     end
